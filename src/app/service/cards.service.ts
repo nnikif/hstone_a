@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {cardsURL, collectible, httpOptions, numberOfCardsOnADeck} from '../constants/constants';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,9 @@ export class CardsService {
 
   loadCardsOfType(cardType = 'Neutral') {
     this.http.get<Object[]>(`${cardsURL}${cardType}${collectible}`, httpOptions)
+      .pipe(map(result => result.filter(res => res['img'] && res['type'] !== 'Hero')))
       .subscribe(result => {
-        this.cardsAll = result.filter(res => res['img'] && res['type'] !== 'Hero');
+        this.cardsAll = result;
         this.filterAll();
       });
 
