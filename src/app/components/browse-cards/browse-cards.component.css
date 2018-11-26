@@ -1,0 +1,12 @@
+.card {
+  float: left;
+  height: 340px;
+  width: 225px;
+}
+.board {
+  width: 1000px;
+  float: left;
+}
+.selector {
+
+}

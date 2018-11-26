@@ -1,0 +1,27 @@
+<div>
+<select  (change)="cardService.loadCardsOfType($event.target.value)">
+  <option *ngFor="let class of classes" [value]="class" [selected]="class === 'Neutral'">{{class}}</option>
+</select>
+
+<select (change)="cardService.filterByRarity($event.target.value)">
+  <option *ngFor="let cardType of cardtypes" [value]="cardType">{{cardType}}</option>
+</select>
+  <label>Mana: </label>
+  <select (change)="cardService.filterByMana($event.target.value)">
+    <option *ngFor="let manus of mana" [value]="manus">{{manus}}</option>
+  </select>
+  <label>Race: </label>
+<input type="text" (keyup)="cardService.filterByRace($event.target.value)"/>
+<label>Description: </label>
+<input type="text" (keyup)="cardService.filterByDescription($event.target.value)">
+<label>Title:</label>
+  <input type="text" (keyup)="cardService.filterByTitle($event.target.value)">
+</div>
+
+<div class="board">
+<div *ngFor="let card of cardService.tableCards">
+  <img class="card" src="{{card.img}}">
+</div>
+</div>
+  <button class="btn btn-primary" (click)="cardService.shiftTableCards(-1)">Previous</button>
+  <button class="btn btn-primary" (click)="cardService.shiftTableCards(+1)">Next</button>
