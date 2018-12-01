@@ -10,3 +10,6 @@
 .buttons {
  float: left;
 }
+button {
+  margin-left: 20px;
+}
