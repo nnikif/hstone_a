@@ -1,0 +1,66 @@
+.card-name {
+  color: aliceblue;
+  border-radius: 15px;
+  width: 250px;
+  margin: 2px;
+  padding-left: 20px;
+}
+.deck {
+  float: left;
+}
+.card-cost {
+  float: right;
+  margin-right: 20px;
+  background-color: cornflowerblue;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shown-card {
+  position: absolute;
+  left: 855px;
+  top: 100px;
+}
+
+.hunter {
+  background-color: #377A31;
+
+}
+.druid {
+  background-color: #5C4129;
+}
+
+.mage {
+  background-color: #5D6793;
+}
+
+.neutral {
+  background-color: #766457;
+}
+
+.paladin {
+  background-color: #D7AA3B;
+}
+
+.priest {
+  background-color: #B8C0C8;
+}
+
+.rogue {
+  background-color: #413D41;
+}
+
+.shaman {
+  background-color: #494C92;
+}
+
+.warlock {
+  background-color: #543B5C;
+}
+
+.warrior {
+  background-color: #832F2B;
+}

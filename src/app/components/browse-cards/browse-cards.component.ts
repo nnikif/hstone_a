@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CardsService} from '../../service/cards.service';
 import {cardTypes, classes, mana} from '../../constants/constants';
+import {DeckService} from '../../service/deck.service';
 
 @Component({
   selector: 'app-browse-cards',
@@ -12,7 +13,7 @@ export class BrowseCardsComponent implements OnInit {
   cardtypes: Array<string>;
   mana: Array<number>;
 
-  constructor(public cardService: CardsService) {
+  constructor(public cardService: CardsService, private deckService: DeckService) {
     this.classes = classes;
     this.cardtypes = cardTypes;
     this.mana = mana;
@@ -20,6 +21,10 @@ export class BrowseCardsComponent implements OnInit {
 
   ngOnInit() {
     this.cardService.loadCardsOfType();
+  }
+
+  addCard(card: Object) {
+    this.deckService.addCard(card);
   }
 
 }

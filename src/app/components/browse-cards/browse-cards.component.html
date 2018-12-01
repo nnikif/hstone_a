@@ -20,8 +20,9 @@
 
 <div class="board">
 <div *ngFor="let card of cardService.tableCards">
-  <img class="card" src="{{card.img}}">
+  <img class="card" src="{{card.img}}" (click)="addCard(card)">
 </div>
-</div>
+</div><div class="buttons">
   <button class="btn btn-primary" (click)="cardService.shiftTableCards(-1)">Previous</button>
   <button class="btn btn-primary" (click)="cardService.shiftTableCards(+1)">Next</button>
+</div>

@@ -1,0 +1,8 @@
+<div class="deck">{{deckService.cardDeck.length}} of 30, {{deckService.deckClass}} deck
+<div *ngFor="let card of deckService.cardDeck; let i = index" class="card-name" (click)="deckService.removeCard(i); hideCard();"
+(mouseover)="showCard(card)" (mouseout)="hideCard()" [ngClass]="returnClass(card)">
+{{ card.name}}
+  <div class="card-cost">{{card.cost}}</div>
+</div>
+</div>
+<div class="shown-card"><img src="{{shownCard.img}}"></div>
