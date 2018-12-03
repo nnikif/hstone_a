@@ -37,6 +37,9 @@ export class DeckService {
 
   public loadFromStorage() {
     this.cardDeck = JSON.parse(localStorage.getItem('deck'));
+    if (!this.cardDeck) {
+      this.cardDeck = [];
+    }
   }
 
   public get deckClass () {
